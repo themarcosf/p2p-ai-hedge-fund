@@ -25,9 +25,13 @@ EOF
 # Change to the project root directory and handle failure
 cd /var/app || { echo "Failure: /var/app dir does not exist."; exit 10; }
 
-# Parse command line arguments
+# Default shell variables
 EXIT_CODE=0
 
+# Default environment variables
+export RUST_BACKTRACE=1
+
+# Parse command line arguments
 # shellcheck disable=SC1009
 case $1 in
     --help)
