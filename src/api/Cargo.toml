@@ -1,7 +1,8 @@
 [package]
-name = "project"
+name = "api"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-rand = "0.9.2"
+rocket = "0.5"
+rocket_ws = "0.1"

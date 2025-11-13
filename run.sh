@@ -40,28 +40,26 @@ case $1 in
 
     --build)
         echo "Building application..."
-        cd /var/app/src/project || { echo "Failure: /var/app/src/project dir does not exist."; exit 10; }
+        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo build
     ;;
 
     --check)
         echo "Checking application..."
-        cd /var/app/src/project || { echo "Failure: /var/app/src/project dir does not exist."; exit 10; }
+        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo check
     ;;
 
     --release)
         echo "Building application for release..."
-        cd /var/app/src/project || { echo "Failure: /var/app/src/project dir does not exist."; exit 10; }
+        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo build --release
     ;;
 
     --run)
-        # export CHAT_P2P_PORT=9999
-        # export CHAT_PEER=/ip4/127.0.0.1/tcp/8888
         echo "Starting application..."
-        cd /var/app/src/project || { echo "Failure: /var/app/src/project dir does not exist."; exit 10; }
-        cargo run
+        cd /var/app || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
+        cargo run --bin api
     ;;
 
     --shell)
@@ -74,7 +72,7 @@ case $1 in
 
     --update)
         echo "Updating dependencies..."
-        cd /var/app/src/project || { echo "Failure: /var/app/src/project dir does not exist."; exit 10; }
+        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo update
     ;;
 

@@ -1,8 +1,14 @@
->
+> https://doc.rust-lang.org/book/ch08-03-hash-maps.html
 
 > https://doc.rust-lang.org/reference/introduction.html
 
-> https://doc.rust-lang.org/cargo/ > https://doc.rust-lang.org/std/prelude/index.html
+> https://doc.rust-lang.org/cargo/
+
+> https://doc.rust-lang.org/std/index.html
+
+> https://doc.rust-lang.org/nomicon/intro.html
+
+> https://rust-lang.github.io/api-guidelines/
 
 > https://tokio.rs/tokio/tutorial/spawning#tasks
 
