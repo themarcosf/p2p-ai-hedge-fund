@@ -39,23 +39,20 @@ case $1 in
     ;;
 
     --build)
-        echo "Building application..."
-        cargo build
+        echo "To be implemented: building the application..."
     ;;
 
     --check)
-        echo "Checking application..."
-        cargo check
+        echo "To be implemented: checking syntax without building..."
     ;;
 
     --release)
-        echo "Building application for release..."
-        cargo build --release
+        echo "To be implemented: building in release mode..."
     ;;
 
     --run)
         echo "Starting application..."
-        cargo run
+        cargo run --bin minigrep
     ;;
 
     --shell)
@@ -63,13 +60,11 @@ case $1 in
     ;;
 
     --tests)
-        echo "Running tests..."
-        cargo test
+        echo "To be implemented: running tests..."
     ;;
 
     --update)
-        echo "Updating dependencies..."
-        cargo update
+        echo "To be implemented: updating dependencies..."
     ;;
 
     *)

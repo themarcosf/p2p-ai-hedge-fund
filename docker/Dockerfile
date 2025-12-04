@@ -29,7 +29,7 @@ COPY docker/init.sh /etc/profile.d/init.sh
 ### App setup #################################################################
 
 # Copy source files
-COPY --chown=app:app src $PROJECT_ROOT/src
+COPY --chown=app:app . $PROJECT_ROOT/
 
 # Switch to app user
 USER app
