@@ -23,22 +23,11 @@
                 "vadimcn.vscode-lldb",
                 "ms-vscode.makefile-tools",
                 "editorconfig.editorconfig"
-            ],
-            "settings": {
-                "editor.formatOnSave": true,
-                "editor.inlayHints.enabled": "off",
-                "files.watcherExclude": {
-                    "**/target/**": true
-                },
-                "rust-analyzer.cargo.buildScripts.enable": false,
-                "rust-analyzer.procMacro.enable": false,
-                "rust-analyzer.cargo.allFeatures": false,
-                "rust-analyzer.files.watcher": "client"
-            }
+            ]
         }
     },
     "runArgs": [
         "--rm"
     ],
-    "postCreateCommand": "rustup component add rustfmt clippy && chmod +x /var/app/run.sh || true"
+    "postCreateCommand": "rustup component add rustfmt clippy && [ -f /var/app/run.sh ] && chmod +x /var/app/run.sh"
 }

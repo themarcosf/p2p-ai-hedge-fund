@@ -40,26 +40,22 @@ case $1 in
 
     --build)
         echo "Building application..."
-        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo build
     ;;
 
     --check)
         echo "Checking application..."
-        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo check
     ;;
 
     --release)
         echo "Building application for release..."
-        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo build --release
     ;;
 
     --run)
         echo "Starting application..."
-        cd /var/app || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
-        cargo run --bin api
+        cargo run
     ;;
 
     --shell)
@@ -67,12 +63,12 @@ case $1 in
     ;;
 
     --tests)
-        echo "To be implemented..."
+        echo "Running tests..."
+        cargo test
     ;;
 
     --update)
         echo "Updating dependencies..."
-        cd /var/app/src/api || { echo "Failure: /var/app/src/api dir does not exist."; exit 10; }
         cargo update
     ;;
 

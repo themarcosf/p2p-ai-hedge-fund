@@ -1,7 +1,12 @@
 # Environment Variables
 .env
 
-# Rust
+# Database
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Binaries
 **/target
 
 # OS

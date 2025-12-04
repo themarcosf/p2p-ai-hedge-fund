@@ -1,4 +1,6 @@
-> https://doc.rust-lang.org/book/ch08-03-hash-maps.html
+>
+
+> https://doc.rust-lang.org/rustc/what-is-rustc.html
 
 > https://doc.rust-lang.org/reference/introduction.html
 
