@@ -23,7 +23,7 @@ OPTIONS:
     --run   [args...]   Build and run the binary with optional arguments
                         Example: ./run.sh --run needle haystack.txt
     --shell             Start the Rust REPL (evcxr)
-    --tests             Run tests (cargo test)
+    --test              Run unit tests from the library crate
     --update            Update dependencies (cargo update)
 
 Any arguments after -- are passed directly to the binary when using --run
@@ -75,8 +75,9 @@ while [[ $# -gt 0 ]]; do
             evcxr
         ;;
 
-        --tests)
-            echo "To be implemented: running tests..."
+        --test)
+            echo "Running unit tests from the library crate..."
+            cargo test
         ;;
 
         --update)

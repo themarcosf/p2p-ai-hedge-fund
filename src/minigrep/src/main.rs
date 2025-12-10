@@ -2,6 +2,9 @@ use minigrep::search;
 use std::error::Error;
 use std::{env, fs, process};
 
+////////////////////////////////////////////////////////////////////////////////
+// implementation
+////////////////////////////////////////////////////////////////////////////////
 struct Config {
     query: String,
     file_path: String,
@@ -21,12 +24,7 @@ impl Config {
 }
 
 fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    println!("Query: {}", config.query);
-    println!("File path: {}", config.file_path);
-
     let contents: String = fs::read_to_string(config.file_path)?;
-
-    println!("Contents: {contents}");
 
     for line in search(&config.query, &contents) {
         println!("Search line: {line}")
