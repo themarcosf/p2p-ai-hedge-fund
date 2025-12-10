@@ -9,5 +9,8 @@
 # Binaries
 **/target
 
+# Output files
+output.txt
+
 # OS
 .DS_Store
