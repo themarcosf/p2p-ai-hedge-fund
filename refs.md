@@ -1,4 +1,4 @@
-> https://doc.rust-lang.org/book/ch12-05-working-with-environment-variables.html
+>
 
 > https://doc.rust-lang.org/rustc/what-is-rustc.html
 
