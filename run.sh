@@ -1,39 +1,26 @@
 #!/usr/bin/env bash
 # run.sh - Development helper script for the Rust minigrep project
 
-# exit on error, unset vars, pipe failures
-set -euo pipefail
-
-# define project root
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$PROJECT_ROOT"
-
 # usage instructions for the script
 show_help() {
     cat << EOF
-Usage: ./run.sh [OPTIONS] [-- <extra cargo arguments>]
+Usage: ./run.sh [OPTIONS]
 
 A convenient wrapper around common cargo commands for the minigrep project.
 
 OPTIONS:
     --help              Show this help message and exit
-    --check             Check compilation without producing artifacts (cargo check)
-    --build             Build in debug mode (cargo build)
-    --release           Build in release mode (cargo build --release)
-    --run   [args...]   Build and run the binary with optional arguments
-                        Example: ./run.sh --run needle haystack.txt
-    --shell             Start the Rust REPL (evcxr)
+    --build             Build in debug mode
+    --check             Check compilation without producing artifacts
+    --doc               Generate documentation
+                            :: click project name (minigrep) in the browser
+    --release           Build in release mode
+    --run [args...].    Build and run the binary with optional arguments
+                            :: ./run.sh --run to poem.txt
+                            :: IGNORE_CASE=True ./run.sh --run to poem.txt
+    --shell             Start the Rust REPL
     --test              Run unit tests from the library crate
-    --update            Update dependencies (cargo update)
-
-Any arguments after -- are passed directly to the binary when using --run
-or to cargo for other commands when it makes sense.
-
-Examples:
-    ./run.sh --run needle myfile.txt
-    ./run.sh --run -- --ignore-case needle file.txt
-    ./run.sh --clippy -- -D warnings
-
+    --update            Update dependencies
 EOF
 }
 
@@ -49,16 +36,24 @@ while [[ $# -gt 0 ]]; do
             exit 0
         ;;
 
+        --build)
+            echo "Building the application in debug mode..."
+            cargo build
+        ;;
+
         --check)
             echo "To be implemented: checking syntax without building..."
         ;;
 
-        --build)
-            echo "To be implemented: building the application..."
+        --doc)
+            echo "Generating documentation..."
+            cargo doc --no-deps
+            python3 -m http.server 8000 --bind 0.0.0.0 -d target/doc
         ;;
 
         --release)
-            echo "To be implemented: building in release mode..."
+            echo "Building the application in release mode..."
+            cargo build --release
         ;;
 
         --run)

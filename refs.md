@@ -1,4 +1,4 @@
->
+> https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#adding-metadata-to-a-new-crate
 
 > https://doc.rust-lang.org/rustc/what-is-rustc.html
 
